@@ -17,24 +17,46 @@ $.ajax({
             
             // if the API has that zipcode, then put tree name into array
             if (data[i].zipcode == userZipCode){
+                
+                // outputs info into array
                 var treeName = [];
-                treeName.push(data[i].spc_common + ", ");
+                treeName.push(data[i].spc_common);
                 
-               
-               
-              // outputs the address of the tree  
+              
                 var treeAddress = [];
-                treeAddress.push(data[i].address + ", ");
-                document.write(treeName);
-                document.write("<br>");
-                document.write(treeAddress); 
-                document.write("<br>");
+                treeAddress.push(data[i].address);
                 
+                
+                var treeId = [];
+                treeId.push(data[i].tree_id);
+                
+                
+                var treeHealth = [];
+                treeHealth.push(data[i].health);
+                
+                var treeBorough = [];
+                treeBorough.push(data[i].boroname);
+                
+                
+                // prints out the whole info (tree name, address, id)
+                document.write("Tree Name: " + treeName);
+                document.write("<br>");
+                document.write("Tree Address: " + treeAddress); 
+                document.write("<br>");
+                document.write("Tree Borough Name: " + treeBorough);
+                document.write("<br>");
+                document.write("Tree Id: " + treeId); 
+                document.write("<br>");
+                document.write("Tree Health: " + treeHealth);
+                document.write("<br>");
+                document.write("Tree Borough Name: " + treeBorough);
+                document.write("<br>");
+                document.write("<br>");
                  
-            // } else {
-            //     document.write("Zipcode is not found");
+            
             }
         }
+      
     }
 });
 
