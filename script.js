@@ -8,16 +8,20 @@ $.ajax({
     success: function(data) {
         console.log(data);
         
-        var userZipCode = 11214 //prompt("Please enter your Zip Code.");
+        var userZipCode = 11214; //prompt("Please enter your Zip Code.");
         
-        for(var i = 0; i < data.length; i++){
-            //console.log(data[i].zipcode)
+        
+        // takes the user zipcode + looks for trees that lives by them
+        for(var i = 0; i < data.length; i++){ 
+            //console.log(data[i].zipcode) 
+            
+            // if the API has that zipcode, then put tree name into array
             if (data[i].zipcode == userZipCode){
                 var array = [];
                 array.push(data[i].spc_common + ", ");
-                document.write(array)
+                document.write(array);
             }
-        };
+        }
     }
 });
 
