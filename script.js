@@ -8,7 +8,7 @@ $.ajax({
     success: function(data) {
         console.log(data);
         
-        var userZipCode = 11214; //prompt("Please enter your Zip Code.");
+        var userZipCode = prompt("Please enter your Zip Code.");
         
         
         // takes the user zipcode + looks for trees that lives by them
@@ -19,18 +19,28 @@ $.ajax({
             if (data[i].zipcode == userZipCode){
                 var treeName = [];
                 treeName.push(data[i].spc_common + ", ");
-               
-                 var treeAddress = [];
+                
+                var treeAddress = [];
                 treeAddress.push(data[i].address + ", ");
-                document.write(treeName);
+                
+                var treeId = [];
+                treeId.push(data[i].tree_id + ", ");
+                
+                document.write("Tree Name: " + treeName);
                 document.write("<br>");
-                document.write(treeAddress); 
+                document.write("Tree Address: " + treeAddress); 
+                document.write("<br>");
+                document.write("Tree Id: " + treeId); 
                 document.write("<br>");
             }
         }
+        // document.write(treeName);
+        // document.write("<br>");
+        // document.write(treeAddress); 
+        // document.write("<br>");
     }
 });
 
-//jhjhdhkjdshfsfsdfsfsdfdsf
+//jhjhdhkjdshfsfsdfsfsdfdsfdfsdfssdfffefsdfghfds
 
 
