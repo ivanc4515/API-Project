@@ -9,38 +9,54 @@ $.ajax({
         console.log(data);
         
         var userZipCode = prompt("Please enter your Zip Code.");
-        
-        
+
         // takes the user zipcode + looks for trees that lives by them
         for(var i = 0; i < data.length; i++){ 
             //console.log(data[i].zipcode) 
             
             // if the API has that zipcode, then put tree name into array
             if (data[i].zipcode == userZipCode){
-                var treeName = [];
-                treeName.push(data[i].spc_common + ", ");
                 
+                // outputs info into array
+                var treeName = [];
+                treeName.push(data[i].spc_common);
+                
+              
                 var treeAddress = [];
-                treeAddress.push(data[i].address + ", ");
+                treeAddress.push(data[i].address);
+                
                 
                 var treeId = [];
-                treeId.push(data[i].tree_id + ", ");
+                treeId.push(data[i].tree_id);
                 
+                
+                var treeHealth = [];
+                treeHealth.push(data[i].health);
+                
+                var treeBorough = [];
+                treeBorough.push(data[i].boroname);
+                
+                
+                // prints out the whole info (tree name, address, id)
                 document.write("Tree Name: " + treeName);
+                document.write("<br>");
+                document.write("Tree Borough Name: " + treeBorough);
                 document.write("<br>");
                 document.write("Tree Address: " + treeAddress); 
                 document.write("<br>");
                 document.write("Tree Id Number: " + treeId); 
                 document.write("<br>");
+                document.write("Tree Health: " + treeHealth);
+                document.write("<br>");
+                document.write("<br>");
+                 
+            
             }
         }
-        // document.write(treeName);
-        // document.write("<br>");
-        // document.write(treeAddress); 
-        // document.write("<br>");
+      
     }
 });
 
-//jhjhdhkjdshfsfsdfsfsdfdsfdfsdfssdfffefsdfghfds
+
 
 
