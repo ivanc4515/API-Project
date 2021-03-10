@@ -30,7 +30,7 @@ $.ajax({
                 document.write("<br>");
                 document.write("Tree Address: " + treeAddress); 
                 document.write("<br>");
-                document.write("Tree Id: " + treeId); 
+                document.write("Tree Id Number: " + treeId); 
                 document.write("<br>");
             }
         }
