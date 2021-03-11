@@ -1,6 +1,6 @@
-// Agenda: look up zipcode and it will output what type of tree lives by us AND THEN search up a type of a tree and where there is
-// OTHER:  if theres a number then continue code
-// OTHER: if the number does not exist then do not continue code
+// Agenda: puts zipcode and it will output the info of the trees that lives by your zipcode 
+
+
 
 $.ajax({
     url: 'https://data.cityofnewyork.us/resource/uvpi-gqnh.json',
@@ -12,7 +12,7 @@ $.ajax({
 
         // takes the user zipcode + looks for trees that lives by them
         for(var i = 0; i < data.length; i++){ 
-            //console.log(data[i].zipcode) 
+            
             
             // if the API has that zipcode, then put tree name into array
             if (data[i].zipcode == userZipCode){
@@ -37,7 +37,7 @@ $.ajax({
                 treeBorough.push(data[i].boroname);
                 
                 
-                // prints out the whole info (tree name, address, id)
+                // prints out the whole info (tree name, tree borough, tree address, tree id, and tree health)
                 document.write("Tree Name: " + treeName);
                 document.write("<br>");
                 document.write("Tree Borough Name: " + treeBorough);
