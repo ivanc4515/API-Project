@@ -8,7 +8,7 @@ $.ajax({
     success: function(data) {
         console.log(data);
         
-        var userZipCode = prompt("Please enter your Zip Code.");
+        var userZipCode = prompt("The website will take your zipcode and tells you what trees live in that area and the tree's name, address, Id, health, and Borough. Please enter your Zip Code.");
 
         // takes the user zipcode + looks for trees that lives by them
         for(var i = 0; i < data.length; i++){ 
